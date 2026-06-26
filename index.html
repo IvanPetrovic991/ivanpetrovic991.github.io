@@ -47,11 +47,10 @@
       <div class="hero-meta reveal mono">
         <img class="hero-avatar" src="assets/profile.png" alt="Ivan Petrović" width="600" height="600">
         <span class="pill pill-live"><span class="pulse"></span>open to interesting problems</span>
-        <span class="pill">Podgorica, Montenegro</span>
       </div>
       <h1 class="hero-title">
-        <span class="reveal d1">I break software</span>
-        <span class="reveal d2"><em class="grad-text">before your users do.</em></span>
+        <span class="reveal d1">I find the breaking point first.</span>
+        <span class="reveal d2"><em class="grad-text">so production never has to.</em></span>
       </h1>
       <p class="hero-sub reveal d3">
         <strong>Ivan Petrović</strong> — Performance Engineer · Senior QA Automation Engineer · QA Lead.
@@ -277,6 +276,113 @@
         <span class="dim">page objects never assert · specs never touch selectors · selectors heal themselves</span>
       </p>
     </article>
+
+    <!-- ===== PROJECT 3: VISUAL COMPARISON ===== -->
+    <article class="project reveal">
+      <header class="project-head">
+        <div>
+          <p class="project-tag mono">03 / visual regression</p>
+          <h2 class="project-title">Visual Comparison</h2>
+          <p class="project-lede">
+            <strong>Pixel-perfect UI regression testing.</strong> Catches the layout and styling breakage functional
+            tests walk straight past — and <em>proves it</em> by diffing a clean build against an intentionally broken
+            one. A data-driven registry keeps the jump from ~30 snapshots to <em>1000+</em> linear: one array row
+            becomes a test across every project.
+          </p>
+        </div>
+        <div class="project-cta">
+          <a class="btn btn-primary" href="https://github.com/IvanPetrovic991/visual-comparison" target="_blank" rel="noopener">View repo →</a>
+          <div class="chips mono">
+            <span>Playwright 1.61</span><span>TypeScript 6</span><span>Page Object Model</span><span>Docker</span><span>Sharded CI</span><span>3 browsers · 2 devices</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="bento">
+        <div class="bento-card span-7 glow">
+          <h3 class="bento-title"><span class="bento-ico">🔍</span> Proven to catch real bugs</h3>
+          <p>A screenshot test is only convincing if it catches something. The same suite runs against two deploys of
+            the Toolshop app — a clean build and an intentionally broken fork — backed by <em>identical data</em>, so any
+            pixel difference is a planted defect the suite must flag. On the with-bugs build the affected pages light up
+            red — a shifted layout and typos like <code class="mono">Contakt</code> and <code class="mono">Massage</code>
+            all caught. The trick: there a <em>passing</em> run would be the real bug.</p>
+          <div class="verdict mono">
+            <div class="v-row v-head"><span>Build</span><span>Role</span><span>Run</span><span></span><span>Verdict</span></div>
+            <div class="v-row"><span>clean</span><span>baseline source</span><span>passes</span><span></span><span class="ok">✓ match</span></div>
+            <div class="v-row"><span>with-bugs</span><span>same tests</span><span>fails</span><span></span><span class="ok">✓ caught</span></div>
+          </div>
+        </div>
+
+        <div class="bento-card span-5 glow">
+          <h3 class="bento-title"><span class="bento-ico">🧬</span> Data-driven registry — add a row, get a test</h3>
+          <p>Coverage lives in one array; a single generated spec turns each entry into a test, multiplied across every
+            project. <em>Adding a screenshot is one object, not a new file</em> — the design that keeps the jump to
+            1000+ snapshots linear.</p>
+<pre class="code mono"><code><span class="c-cm">// pageRegistry.ts — one entry = one test</span>
+{
+  category: <span class="c-str">'home'</span>,
+  name: <span class="c-str">'home-grid'</span>,
+  tags: [<span class="c-str">'@smoke'</span>, <span class="c-str">'@visual'</span>],
+  run: <span class="c-kw">async</span> ({ homePage }) =&gt; {
+    <span class="c-kw">await</span> homePage.<span class="c-fn">open</span>();
+  },
+}</code></pre>
+        </div>
+
+        <div class="bento-card span-5 glow">
+          <h3 class="bento-title"><span class="bento-ico">🧊</span> Flake frozen from one place</h3>
+          <p>Every visual assertion inherits one tuned config: animations and caret killed, a shared stylesheet that
+            freezes transitions and hides the polling chat widget, and a resolution-independent tolerance that absorbs
+            anti-aliasing noise without hiding real change.</p>
+<pre class="code mono"><code>toHaveScreenshot: {
+  animations: <span class="c-str">'disabled'</span>,
+  caret: <span class="c-str">'hide'</span>,
+  scale: <span class="c-str">'css'</span>,
+  stylePath: <span class="c-str">'./tests/support/visual-stabilize.css'</span>,
+  threshold: <span class="c-num">0.2</span>,
+  maxDiffPixelRatio: <span class="c-num">0.01</span>,
+}</code></pre>
+        </div>
+
+        <div class="bento-card span-7 glow">
+          <h3 class="bento-title"><span class="bento-ico">🤖</span> The CI proves the suite still bites</h3>
+          <p>A 4-way sharded matrix runs in the pinned Playwright container. Each shard records baselines from the clean
+            build, sanity-checks the clean build against them (no false positives), then runs the with-bugs build and
+            <em>asserts diffs were found</em> — a meta-check that fails CI if zero regressions are flagged, so an
+            over-tolerant threshold can never let the visual suite go silently blind. Blob reports merge into one HTML
+            report with every side-by-side diff.</p>
+          <div class="kv mono">
+            <div><span class="dim">clean vs baselines</span><span class="ok">must match → no false positives</span></div>
+            <div><span class="dim">with-bugs vs baselines</span><span class="ok">must differ → else CI fails</span></div>
+          </div>
+        </div>
+
+        <div class="bento-card span-4 glow">
+          <h3 class="bento-title"><span class="bento-ico">🖥</span> Cross-browser &amp; responsive</h3>
+          <p>Six flows run across five projects: Chromium, Firefox and WebKit at one 1366×768 desktop viewport, plus
+            Chromium-based <code class="mono">Galaxy Tab S4</code> and <code class="mono">Pixel 7</code>. Selectors target
+            <code class="mono">data-test</code> via <code class="mono">getByTestId</code> — immune to CSS/text refactors.</p>
+        </div>
+
+        <div class="bento-card span-4 glow">
+          <h3 class="bento-title"><span class="bento-ico">🐳</span> Deterministic pixels in Docker</h3>
+          <p>Fonts and anti-aliasing differ across macOS, Windows and Linux, so baselines drift between machines. The
+            pinned <code class="mono">playwright:v1.61.1-noble</code> image renders identically within tolerance on Linux
+            locally and in CI — container baselines match CI exactly. No Percy or Applitools SaaS needed.</p>
+        </div>
+
+        <div class="bento-card span-4 glow">
+          <h3 class="bento-title"><span class="bento-ico">🔒</span> Baselines under control</h3>
+          <p><code class="mono">updateSnapshots: 'none'</code> in CI fails on any drift; <code class="mono">baseline:changed</code>
+            rewrites only what genuinely differs for clean diffs. At thousands of PNGs the snapshot tree can move to
+            Git LFS to keep clones fast.</p>
+        </div>
+      </div>
+
+      <p class="project-foot mono reveal">
+        <span class="dim">record clean → sanity-check → diff with-bugs → assert caught → merge</span> — CI fails if the suite stops catching bugs
+      </p>
+    </article>
   </section>
 
   <!-- ============ EXPERIENCE ============ -->
@@ -320,21 +426,10 @@
         </div>
       </article>
 
-      <article class="xp xp-compact reveal glow">
-        <div class="xp-when mono">Jan 2014 — Sep 2019</div>
-        <div class="xp-body">
-          <h3>Implementation Technician · Team Lead <span class="xp-co grad-text">@ VG GROUP</span></h3>
-          <p class="xp-blurb">Led implementations of CRM/ERP/POS across 50+ hospitality & retail clients; data migrations, Tier 2/3 support.</p>
-        </div>
-      </article>
+    </div>
 
-      <article class="xp xp-compact reveal glow">
-        <div class="xp-when mono">Dec 2016 — Sep 2018</div>
-        <div class="xp-body">
-          <h3>WordPress Developer <span class="xp-co grad-text">@ Inch Agency</span></h3>
-          <p class="xp-blurb">Custom themes & plugins from scratch (PHP, MySQL, JS); SEO and page-speed tuning.</p>
-        </div>
-      </article>
+    <div class="xp-more reveal">
+      <a href="cv.html" class="btn btn-ghost">See full career history →</a>
     </div>
 
     <p class="edu mono reveal"><span class="grad-text">$</span> cat education.txt <span class="dim">→</span> BSc Applied Computer Science · University of Montenegro · 2010–2013</p>

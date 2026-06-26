@@ -523,6 +523,7 @@ a:hover { text-decoration: underline; }
 .xp-blurb { color: var(--text-dim); font-size: 0.86rem; font-style: italic; margin-bottom: 10px; }
 .xp .ticks li { font-size: 0.9rem; }
 
+.xp-more { margin-top: 20px; }
 .edu { margin-top: 28px; font-size: 0.82rem; color: var(--text-dim); }
 
 /* ============ Stack ============ */
