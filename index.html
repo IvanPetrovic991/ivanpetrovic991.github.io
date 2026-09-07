@@ -147,7 +147,7 @@
         <div class="project-cta">
           <a class="btn btn-primary" href="https://github.com/IvanPetrovic991/locust-performance-lab" target="_blank" rel="noopener">View repo <span class="btn-ico" aria-hidden="true">↗</span></a>
           <div class="chips mono">
-            <span>Python</span><span>Locust 2.32.4 pinned</span><span>Docker</span><span>FastAPI</span><span>Prometheus</span><span>Grafana</span><span>GitHub Actions</span>
+            <span>Python 3.12</span><span>Locust 2.32.4 pinned</span><span>pytest</span><span>Docker</span><span>FastAPI</span><span>Prometheus</span><span>Grafana</span><span>GitHub Actions</span>
           </div>
         </div>
       </header>
@@ -160,8 +160,9 @@
             <span class="q">“A dashboard needs a human — an exit code scales.”</span></p>
           <div class="verdict mono">
             <div class="v-row v-head"><span>Scope</span><span>Metric</span><span>Actual</span><span>Limit</span><span></span></div>
-            <div class="v-row"><span>POST /checkout</span><span>p95</span><span>320 ms</span><span>≤ 1500 ms</span><span class="ok">PASS</span></div>
-            <div class="v-row"><span>GET /search?q=[term]</span><span>p95</span><span>780 ms</span><span>≤ 1000 ms</span><span class="ok">PASS</span></div>
+            <div class="v-row"><span>POST /checkout</span><span>p95</span><span>350 ms</span><span>≤ 1500 ms</span><span class="ok">PASS</span></div>
+            <div class="v-row"><span>GET /search?q=[term]</span><span>p95</span><span>750 ms</span><span>≤ 1000 ms</span><span class="ok">PASS</span></div>
+            <div class="v-row"><span>Aggregated</span><span>throughput</span><span>9.0 rps</span><span>≥ 3 rps</span><span class="ok">PASS</span></div>
             <div class="v-row"><span>Aggregated</span><span>error rate</span><span>0.00 %</span><span>≤ 2.0 %</span><span class="ok">PASS</span></div>
           </div>
         </div>
@@ -211,16 +212,20 @@
             drops, or worsening error rate:</p>
           <div class="verdict mono">
             <div class="v-row v-head"><span>Endpoint</span><span>p95 base → now</span><span>Δ p95</span><span></span><span></span></div>
-            <div class="v-row"><span>GET /products/[id]</span><span>67 → 72 ms</span><span>+7.5 %</span><span></span><span class="ok">OK</span></div>
-            <div class="v-row"><span>POST /checkout</span><span>340 → 320 ms</span><span>−5.9 %</span><span></span><span class="ok">OK</span></div>
-            <div class="v-row"><span>Aggregated</span><span>310 → 160 ms</span><span>−48.4 %</span><span></span><span class="ok">OK</span></div>
+            <div class="v-row"><span>GET /products/[id]</span><span>64 → 70 ms</span><span>+9.4 %</span><span></span><span class="ok">OK</span></div>
+            <div class="v-row"><span>POST /checkout</span><span>340 → 350 ms</span><span>+2.9 %</span><span></span><span class="low">LOW SAMPLE</span></div>
+            <div class="v-row"><span>Aggregated</span><span>310 → 220 ms</span><span>−29.0 %</span><span></span><span class="ok">OK</span></div>
           </div>
+          <p class="sm"><strong>Checkout is the interesting row.</strong> At ~0.3 rps it clears
+            <code class="mono">--min-requests</code> nowhere near, so it is reported and
+            <em>deliberately not gated</em> — a ±30% p95 swing computed from eight requests is
+            quantization noise, not evidence.</p>
         </div>
 
         <div class="bento-card span-5 glow">
           <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🧪</span> The gates have their own tests</h4>
           <p>The scripts that decide pass or fail are themselves production code, so they are tested like it:
-            <strong>25 pytest cases across all four of them</strong>, run in their own CI job before any load is
+            <strong>25 pytest cases across all four scripts</strong>, run in their own CI job before any load is
             generated. A broken gate can't quietly wave a regression through.</p>
           <div class="kv mono">
             <div><span class="dim">scripts under test</span><span class="ok">4</span></div>
@@ -251,7 +256,7 @@
       </div>
 
       <p class="project-foot mono reveal">
-        <span class="dim">smoke · baseline · stress · spike · soak · leak-test · compare</span> — every scenario is one <code>make</code> target, every gate is an exit code
+        <span class="dim">smoke · baseline · current · stress · spike · soak · leak-test · compare</span> — every scenario is one <code>make</code> target, every gate is an exit code
       </p>
     </article>
 
@@ -364,8 +369,9 @@
         <div class="bento-card span-4 glow">
           <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🏷</span> 15 tests · 9 suites · 3 browsers</h4>
           <p>Tag-driven: <code class="mono">@smoke @regression @stays @flights @cars @attractions @a11y @api @healer</code>
-            compose with <code class="mono">--grep</code> regexes. Verified green against the live site on
-            Chromium, Firefox and WebKit.</p>
+            compose with <code class="mono">--grep</code> regexes. Three browser projects are configured and run
+            locally; CI keeps the live-site budget honest by sharding <strong>Chromium</strong> two ways, with the
+            nightly cron carrying the full regression tag.</p>
         </div>
 
         <div class="bento-card span-4 glow">
@@ -498,9 +504,11 @@
 
         <div class="bento-card span-4 glow">
           <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🔒</span> Baselines under control</h4>
-          <p><code class="mono">updateSnapshots: 'none'</code> in CI fails on any drift; <code class="mono">baseline:changed</code>
-            rewrites only what genuinely differs for clean diffs. At thousands of PNGs the snapshot tree can move to
-            Git LFS to keep clones fast.</p>
+          <p>CI doesn't trust the committed PNGs — it <em>re-records</em> them from the clean build each run, so the
+            comparison is always the two builds as they are right now, not against a baseline that quietly rotted
+            months ago. Every step after that runs with <code class="mono">updateSnapshots: 'none'</code>, so nothing
+            can silently rewrite a snapshot to make itself pass. Locally, <code class="mono">baseline:changed</code>
+            rewrites only what genuinely differs.</p>
         </div>
       </div>
 

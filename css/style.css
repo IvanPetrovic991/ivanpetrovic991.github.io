@@ -754,6 +754,9 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .v-row:last-child { border-bottom: none; }
 .v-head { color: var(--text-mute); background: rgba(255, 255, 255, 0.022); letter-spacing: 0.02em; }
 .v-row .ok { font-weight: 600; }
+/* Reported but deliberately not gated — neither pass nor fail */
+.low { color: var(--text-mute); font-weight: 600; }
+.v-row .low { letter-spacing: -0.02em; }
 
 /* ============ Key/value rows ============ */
 .kv { display: flex; flex-direction: column; gap: 8px; font-size: 0.775rem; margin-top: auto; }
