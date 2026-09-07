@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — page not found · Ivan Petrović</title>
+  <meta name="description" content="That page doesn't exist. Back to Ivan Petrović's portfolio.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1a1e26">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✓</text></svg>">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <div class="aurora" aria-hidden="true">
+    <div class="aurora-blob a1"></div>
+    <div class="aurora-blob a2"></div>
+    <div class="aurora-blob a3"></div>
+  </div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <nav class="nav" id="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><span class="grad-text">ivan</span>@qa<span class="mute">:~$</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#experience">Experience</a></li>
+        <li><a href="/#stack">Stack</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a href="/cv.html" class="nav-cta">CV →</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="nf">
+    <p class="section-kicker mono">// unexpected status code</p>
+    <p class="nf-code mono"><span class="grad-text">404</span></p>
+    <h1 class="nf-title">This route was never in the test plan.</h1>
+    <p>The page you asked for doesn't exist — no redirect, no fallback, just an honest failure.
+      Which, to be fair, is exactly what a good assertion should do.</p>
+    <div class="nf-actions">
+      <a href="/" class="btn btn-primary">Back to the portfolio <span class="btn-ico" aria-hidden="true">→</span></a>
+      <a href="/#work" class="btn btn-ghost">See the work <span class="btn-ico" aria-hidden="true">↓</span></a>
+    </div>
+  </main>
+
+  <footer class="footer mono">
+    <p><span class="bad">✗ 1 check failed</span> <span class="dim">— © <span id="year"></span> Ivan Petrović · <a href="/">back to portfolio</a></span></p>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

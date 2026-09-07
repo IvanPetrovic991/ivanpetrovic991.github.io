@@ -1,21 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ivan Petrović — Performance & QA Automation Engineer</title>
-  <meta name="description" content="Ivan Petrović — Performance Engineer, Senior QA Automation Engineer and QA Lead. I build test frameworks, performance pipelines, and quality gates that fail builds — not people.">
+  <meta name="description" content="Performance Engineer, Senior QA Automation Engineer and QA Lead. I build test frameworks and quality gates that fail builds — not people.">
+  <link rel="canonical" href="https://ivanpetrovic.dev/">
+  <meta name="theme-color" content="#1a1e26">
+  <meta name="author" content="Ivan Petrović">
+
+  <!-- Open Graph — absolute URLs so LinkedIn/Slack render the card -->
   <meta property="og:title" content="Ivan Petrović — Performance & QA Automation Engineer">
   <meta property="og:description" content="Performance testing as code, self-healing automation frameworks, and quality engineering leadership.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/profile.png">
+  <meta property="og:url" content="https://ivanpetrovic.dev/">
+  <meta property="og:site_name" content="Ivan Petrović">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://ivanpetrovic.dev/assets/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ivan Petrović — Performance & QA Automation Engineer">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ivan Petrović — Performance & QA Automation Engineer">
+  <meta name="twitter:description" content="Performance testing as code, self-healing automation frameworks, and quality engineering leadership.">
+  <meta name="twitter:image" content="https://ivanpetrovic.dev/assets/og-cover.png">
+
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✓</text></svg>">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ivan Petrović",
+    "url": "https://ivanpetrovic.dev/",
+    "image": "https://ivanpetrovic.dev/assets/profile.png",
+    "email": "mailto:ivannkpetrovic@gmail.com",
+    "jobTitle": "Performance Engineer · Senior QA Automation Engineer · QA Lead",
+    "worksFor": { "@type": "Organization", "name": "Fuel Me" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Podgorica", "addressCountry": "ME" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Montenegro" },
+    "sameAs": [
+      "https://www.linkedin.com/in/ivan-petrovic-me/",
+      "https://github.com/IvanPetrovic991"
+    ],
+    "knowsAbout": [
+      "Performance Engineering", "Load Testing", "JMeter", "Locust", "k6",
+      "Test Automation", "Playwright", "Selenium", "TypeScript", "Python",
+      "Visual Regression Testing", "CI/CD", "Grafana", "Prometheus", "QA Leadership"
+    ]
+  }
+  </script>
 </head>
 <body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
 
   <div class="aurora" aria-hidden="true">
     <div class="aurora-blob a1"></div>
@@ -24,11 +69,12 @@
   </div>
   <div class="noise" aria-hidden="true"></div>
 
-  <nav class="nav" id="nav">
-    <div class="nav-progress" id="navProgress"></div>
+  <div class="progress-rail" aria-hidden="true"><div class="progress-bar" id="navProgress"></div></div>
+
+  <nav class="nav" id="nav" aria-label="Primary">
     <div class="nav-inner">
-      <a href="#top" class="nav-logo mono"><span class="grad-text">ivan</span>@qa<span class="dim">:~$</span></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <a href="#top" class="nav-logo"><span class="grad-text">ivan</span>@qa<span class="mute">:~$</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
@@ -41,11 +87,13 @@
     </div>
   </nav>
 
+  <main id="main" tabindex="-1">
+
   <!-- ============ HERO ============ -->
   <header class="hero" id="top">
     <div class="hero-inner">
-      <div class="hero-meta reveal mono">
-        <img class="hero-avatar" src="assets/profile.png" alt="Ivan Petrović" width="600" height="600">
+      <div class="hero-meta reveal">
+        <img class="hero-avatar" src="assets/profile.png" alt="Portrait of Ivan Petrović" width="600" height="600" fetchpriority="high" decoding="async">
         <span class="pill pill-live"><span class="pulse"></span>open to interesting problems</span>
       </div>
       <h1 class="hero-title">
@@ -58,15 +106,15 @@
         performance pipelines that fail builds — not people — and 11+ engineers mentored along the way.
       </p>
       <div class="hero-actions reveal d4">
-        <a href="#work" class="btn btn-primary">See the work ↓</a>
-        <a href="https://github.com/IvanPetrovic991" target="_blank" rel="noopener" class="btn btn-ghost">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.78 1.05.78 2.12v3.14c0 .3.21.66.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+        <a href="#work" class="btn btn-primary">See the work <span class="btn-ico" aria-hidden="true">↓</span></a>
+        <a href="https://github.com/IvanPetrovic991" target="_blank" rel="noopener" class="btn btn-ghost btn-plain">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.78 1.05.78 2.12v3.14c0 .3.21.66.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
           GitHub
         </a>
-        <a href="https://www.linkedin.com/in/ivan-petrovic-me/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/ivan-petrovic-me/" target="_blank" rel="noopener" class="btn btn-ghost btn-plain">LinkedIn</a>
       </div>
       <div class="hero-facts mono reveal d5">
-        <p><span class="fact-prompt">$ now</span> leading QA &amp; performance at <strong>Fuel Me</strong> — an AI-powered procurement platform with Fortune 500 clients; JMeter as the daily driver, Playwright suite built from zero</p>
+        <p><span class="fact-prompt">$ now</span> leading QA &amp; performance at <strong>Fuel Me</strong> — an AI-powered fuel procurement platform with Fortune 500 clients; JMeter as the daily driver, Playwright suite built from zero</p>
         <p><span class="fact-prompt">$ next</span> pioneering AI/LLM testing workflows — intelligent test generation and suites that <strong>heal themselves</strong> when the product changes</p>
         <p><span class="fact-prompt">$ creed</span> performance is a feature, quality gates should fail builds — not people, and a flaky test is a bug with your name on it</p>
       </div>
@@ -79,17 +127,17 @@
     </div>
   </header>
 
-  <main>
   <!-- ============ WORK ============ -->
-  <section id="work" class="section">
+  <section id="work" class="section" aria-labelledby="work-h">
     <p class="section-kicker mono reveal">// selected work — open source, fully documented, green in CI</p>
+    <h2 id="work-h" class="section-title reveal">Selected work</h2>
 
     <!-- ===== PROJECT 1: LOCUST PERFORMANCE LAB ===== -->
     <article class="project reveal">
       <header class="project-head">
         <div>
           <p class="project-tag mono">01 / performance engineering</p>
-          <h2 class="project-title">Locust Performance Lab</h2>
+          <h3 class="project-title">Locust Performance Lab</h3>
           <p class="project-lede">
             <strong>Performance testing as code.</strong> A self-contained load testing framework that ships its own
             misbehaving system under test — one command spins up distributed load generation, live Grafana monitoring,
@@ -97,16 +145,16 @@
           </p>
         </div>
         <div class="project-cta">
-          <a class="btn btn-primary" href="https://github.com/IvanPetrovic991/locust-performance-lab" target="_blank" rel="noopener">View repo →</a>
+          <a class="btn btn-primary" href="https://github.com/IvanPetrovic991/locust-performance-lab" target="_blank" rel="noopener">View repo <span class="btn-ico" aria-hidden="true">↗</span></a>
           <div class="chips mono">
-            <span>Python</span><span>Locust 2.x</span><span>Docker</span><span>FastAPI</span><span>Prometheus</span><span>Grafana</span><span>GitHub Actions</span>
+            <span>Python</span><span>Locust 2.32.4 pinned</span><span>Docker</span><span>FastAPI</span><span>Prometheus</span><span>Grafana</span><span>GitHub Actions</span>
           </div>
         </div>
       </header>
 
       <div class="bento">
         <div class="bento-card span-7 glow">
-          <h3 class="bento-title"><span class="bento-ico">✅</span> SLA gate — perf tests that can fail the build</h3>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">✅</span> SLA gate — perf tests that can fail the build</h4>
           <p>Latency budgets live in <code class="mono">slas.yml</code>, per endpoint. A script parses Locust's CSV,
             prints a verdict table into the GitHub job summary, and exits non-zero on any breach.
             <span class="q">“A dashboard needs a human — an exit code scales.”</span></p>
@@ -119,7 +167,7 @@
         </div>
 
         <div class="bento-card span-5 glow">
-          <h3 class="bento-title"><span class="bento-ico">🧠</span> Memory-leak hunter</h3>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🧠</span> Memory-leak hunter</h4>
           <p>Samples container memory under constant load, discards warm-up, fits a least-squares trend —
             and fails only when <em>both</em> growth rate and total growth blow their budgets. Demonstrated against
             a simulated ~50 KB/request leak:</p>
@@ -129,11 +177,24 @@
           </div>
         </div>
 
+        <div class="bento-card span-7 glow">
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🛡</span> Gates hardened against a real pipeline</h4>
+          <p>A green suite that lies is worse than a red one. A floating <code class="mono">geventhttpclient</code> stopped
+            URL-encoding raw spaces, so <strong>~29% of <code class="mono">/search</code> requests failed on CI</strong> and every
+            nightly run went red — a tooling bug wearing a performance bug's costume. Search terms are now encoded, Locust is
+            <strong>pinned to 2.32.4</strong> to match the Compose image, and the gates learned to tell noise from signal:</p>
+          <ul class="ticks">
+            <li>Runs with <code class="mono">--exit-code-on-error 0</code> — the SLA gate is the judge, not Locust's any-failure default (the API injects ~1% payment failures <em>by design</em>)</li>
+            <li>Survives Locust's <code class="mono">N/A</code> percentiles, and <strong>fails when an SLA'd endpoint is missing</strong> from the results instead of silently passing</li>
+            <li>Skips low-sample endpoints rather than gating on quantization noise; flags 0→X regressions</li>
+          </ul>
+        </div>
+
         <div class="bento-card span-5 glow">
-          <h3 class="bento-title"><span class="bento-ico">⚡</span> Load shapes as ~15 lines of code</h3>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">⚡</span> Load shapes as ~15 lines of code</h4>
           <p>Stress, spike and soak profiles are <code class="mono">LoadTestShape</code> classes selected by one env var —
             one reviewed workload model serves every scenario.</p>
-<pre class="code mono"><code><span class="c-kw">class</span> <span class="c-fn">SpikeShape</span>(LoadTestShape):
+<pre class="code mono" tabindex="0" role="region" aria-label="Code sample, scrollable"><code><span class="c-kw">class</span> <span class="c-fn">SpikeShape</span>(LoadTestShape):
     <span class="c-str">"""20-user baseline, sudden 10× spike."""</span>
     <span class="c-kw">def</span> <span class="c-fn">tick</span>(self):
         t = self.get_run_time()
@@ -144,9 +205,10 @@
         </div>
 
         <div class="bento-card span-7 glow">
-          <h3 class="bento-title"><span class="bento-ico">📉</span> Regression detection, run over run</h3>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">📉</span> Regression detection, run over run</h4>
           <p>One run tells you where you are; comparing runs tells you where you're heading. Nightly CI diffs
-            endpoint-by-endpoint and fails on p95 growth, throughput drops, or worsening error rate:</p>
+            endpoint-by-endpoint against <em>the previous nightly's artifact</em> and fails on p95 growth, throughput
+            drops, or worsening error rate:</p>
           <div class="verdict mono">
             <div class="v-row v-head"><span>Endpoint</span><span>p95 base → now</span><span>Δ p95</span><span></span><span></span></div>
             <div class="v-row"><span>GET /products/[id]</span><span>67 → 72 ms</span><span>+7.5 %</span><span></span><span class="ok">OK</span></div>
@@ -155,23 +217,36 @@
           </div>
         </div>
 
+        <div class="bento-card span-5 glow">
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🧪</span> The gates have their own tests</h4>
+          <p>The scripts that decide pass or fail are themselves production code, so they are tested like it:
+            <strong>25 pytest cases across all four of them</strong>, run in their own CI job before any load is
+            generated. A broken gate can't quietly wave a regression through.</p>
+          <div class="kv mono">
+            <div><span class="dim">scripts under test</span><span class="ok">4</span></div>
+            <div><span class="dim">pytest cases</span><span class="ok">25</span></div>
+          </div>
+        </div>
+
         <div class="bento-card span-4 glow">
-          <h3 class="bento-title"><span class="bento-ico">🐳</span> Distributed by default</h3>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🐳</span> Distributed by default</h4>
           <p><code class="mono">make up WORKERS=8</code> — Locust master/worker split in plain Docker Compose,
-            <code class="mono">FastHttpUser</code> for ~10× RPS per generator. Same images scale across hosts or Kubernetes.</p>
+            <code class="mono">FastHttpUser</code> for ~10× RPS per generator. The same images spread across extra
+            hosts by pointing workers at the master.</p>
         </div>
 
         <div class="bento-card span-4 glow">
-          <h3 class="bento-title"><span class="bento-ico">📊</span> Live observability</h3>
-          <p>Pre-provisioned Grafana dashboard: RPS, p50/p95 overlaid with the user ramp, failures/s, and the
-            leak-hunting memory panel — problems visible the moment they start, not in a PDF afterwards.</p>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">📊</span> Live observability</h4>
+          <p>Pre-provisioned Grafana dashboard: throughput and average response time per endpoint, response time
+            plotted against the user ramp, failures/s, and the leak-hunting memory panel — problems visible the
+            moment they start, not in a PDF afterwards.</p>
         </div>
 
         <div class="bento-card span-4 glow">
-          <h3 class="bento-title"><span class="bento-ico">👥</span> Realistic workload model</h3>
-          <p>75% browsers, 25% buyers running the full funnel as a <code class="mono">SequentialTaskSet</code>;
-            <code class="mono">catch_response</code> marks a 200-without-<code class="mono">order_id</code> as a failure —
-            wrong answers delivered quickly are still wrong.</p>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🎯</span> Error budgets with a rationale</h4>
+          <p>Checkout gets a 5% budget, and the config says why: with ~100 checkout samples in a 2-minute run and ~1%
+            injected gateway timeouts, a 3% budget goes flaky on binomial noise alone. <em>Thresholds you can defend
+            in review.</em></p>
         </div>
       </div>
 
@@ -180,33 +255,36 @@
       </p>
     </article>
 
-    <!-- ===== PROJECT 2: BOOKING AUTOMATION FRAMEWORK ===== -->
+    <!-- ===== PROJECT 2: SELF-HEALING PLAYWRIGHT FRAMEWORK ===== -->
     <article class="project reveal">
       <header class="project-head">
         <div>
-          <p class="project-tag mono">02 / test automation</p>
-          <h2 class="project-title">Booking.com Automation Framework</h2>
+          <p class="project-tag mono">02 / self-healing automation</p>
+          <h3 class="project-title">Self-Healing Playwright Framework</h3>
           <p class="project-lede">
-            <strong>E2E that survives a live production site.</strong> Playwright + TypeScript framework running green
-            against the real booking.com — anti-bot protection, A/B DOM swaps, white-label variants and all — covering
-            Stays, Flights, Car rentals and Attractions, plus accessibility and API-level checks.
+            <strong>A locator engine that repairs itself, proven on the hardest target available: the live web.</strong>
+            Rather than a mock app that never changes, the demo target is the public booking.com — anti-bot challenges,
+            A/B DOM swaps and white-label variants included — so the healing engine is measured against
+            <em>selectors that genuinely break</em>. Covers Stays, Flights, Car rentals and Attractions, plus
+            accessibility and API-level checks.
           </p>
         </div>
         <div class="project-cta">
-          <a class="btn btn-primary" href="https://github.com/IvanPetrovic991/booking-automation-framework" target="_blank" rel="noopener">View repo →</a>
+          <a class="btn btn-primary" href="https://github.com/IvanPetrovic991/self-healing-playwright-framework" target="_blank" rel="noopener">View repo <span class="btn-ico" aria-hidden="true">↗</span></a>
           <div class="chips mono">
-            <span>Playwright 1.60</span><span>TypeScript strict</span><span>POM</span><span>axe-core</span><span>ESLint 9</span><span>Sharded CI</span>
+            <span>Playwright 1.63</span><span>TypeScript 5.9 strict</span><span>POM</span><span>axe-core</span><span>ESLint 9</span><span>Sharded CI</span>
           </div>
         </div>
       </header>
 
       <div class="bento">
         <div class="bento-card span-7 glow">
-          <h3 class="bento-title"><span class="bento-ico">🩹</span> Self-healing locator engine</h3>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🩹</span> Self-healing locator engine</h4>
           <p>Every element is an <code class="mono">ElementDefinition</code> with ordered fallback candidates. When the primary
-            selector dies mid-day (booking.com A/B tests constantly), candidates are polled round-robin, the winner is logged
-            as a healing event, and non-volatile heals are persisted to a git-committed store so future runs try them first.</p>
-<pre class="code mono"><code>destinationInput: {
+            selector dies mid-day (booking.com A/B tests constantly), candidates are tried in order after a grace period,
+            the winner is logged as a healing event, and non-volatile heals are <strong>persisted across runs</strong> so
+            future runs try the working selector first — then quietly retest the primary and switch back once it recovers.</p>
+<pre class="code mono" tabindex="0" role="region" aria-label="Code sample, scrollable"><code>destinationInput: {
   key: <span class="c-str">'stays.searchbox.destinationInput'</span>,
   candidates: [
     <span class="c-str">'input[name="ss"]'</span>,                            <span class="c-cm">// primary</span>
@@ -217,63 +295,88 @@
         </div>
 
         <div class="bento-card span-5 glow">
-          <h3 class="bento-title"><span class="bento-ico">📡</span> A real heal, captured in CI</h3>
-          <p>Worker processes append events to their own files; a custom reporter consolidates them after the run.
-            The engine is itself covered by E2E tests.</p>
-<pre class="code code-sm mono"><code>{
-  <span class="c-key">"key"</span>: <span class="c-str">"flights.results.flightCards"</span>,
-  <span class="c-key">"failed"</span>: [<span class="c-str">"[data-testid=…_card]"</span>],
-  <span class="c-key">"healed"</span>: <span class="c-str">"[aria-label^='Result item']"</span>,
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">📡</span> A real heal, from the committed store</h4>
+          <p>Not a hypothetical. This is an actual entry from <code class="mono">.healing/healing-store.json</code> after a
+            live run — booking.com dropped an <code class="mono">aria-label</code> input and the engine recovered on a role selector:</p>
+<pre class="code code-sm mono" tabindex="0" role="region" aria-label="Code sample, scrollable"><code>{
+  <span class="c-key">"key"</span>: <span class="c-str">"cars.search.pickupInput"</span>,
+  <span class="c-key">"failed"</span>: [<span class="c-str">"input[aria-label='Pick-up location']"</span>],
+  <span class="c-key">"healed"</span>: <span class="c-str">"role=combobox[name='Pick-up location']"</span>,
   <span class="c-key">"persistPreferred"</span>: <span class="c-num">true</span>
 }</code></pre>
-          <p class="mono dim sm">🩹 healed → logged → persisted → suite stays green</p>
+          <p class="mono mute sm">🩹 healed → logged → persisted → suite stays green</p>
         </div>
 
         <div class="bento-card span-5 glow">
-          <h3 class="bento-title"><span class="bento-ico">🌍</span> Live-site quirks, engineered around</h3>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🌍</span> Live-site quirks, engineered around</h4>
           <ul class="ticks">
             <li>Flights served as <strong>Kayak white-label</strong> in some regions — variant auto-detected, stable deep-link scheme used</li>
             <li>Sign-in popup at random moments — <code class="mono">addLocatorHandler</code> auto-dismisses whenever it blocks</li>
-            <li><code class="mono">/flights/</code> redirect trap — navigation enters via the header tab, like a real user</li>
-            <li>A/B DOM swaps — absorbed by the healer, variants kept as candidates</li>
+            <li>Bot challenges and upstream error pages are <strong>detected explicitly</strong> and skipped, never mistaken for product bugs</li>
+            <li>Assertions read rendered outcomes — site totals, offer content, property identity — <em>never a URL the framework built itself</em></li>
           </ul>
         </div>
 
         <div class="bento-card span-7 glow">
-          <h3 class="bento-title"><span class="bento-ico">🧱</span> Layered architecture</h3>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🧱</span> Layered architecture</h4>
           <div class="layers mono">
             <div class="layer"><span class="layer-n">tests/*.spec.ts</span><span class="dim">intent only — arrange data, call page methods, assert</span></div>
-            <div class="layer-arrow">↓</div>
+            <div class="layer-arrow" aria-hidden="true">↓</div>
             <div class="layer"><span class="layer-n">fixtures</span><span class="dim">page objects + auto fixtures (tracker blocking, console-error capture)</span></div>
-            <div class="layer-arrow">↓</div>
+            <div class="layer-arrow" aria-hidden="true">↓</div>
             <div class="layer"><span class="layer-n">page objects</span><span class="dim">locators + user actions · never assert</span></div>
-            <div class="layer-arrow">↓</div>
+            <div class="layer-arrow" aria-hidden="true">↓</div>
             <div class="layer"><span class="layer-n">healing engine</span><span class="dim">candidate resolution + persistence</span></div>
           </div>
           <p class="sm">Plus a data layer with fluent builders — dates always generated relative to “now”, so the suite never rots from hardcoded test data.</p>
         </div>
 
-        <div class="bento-card span-4 glow">
-          <h3 class="bento-title"><span class="bento-ico">♿</span> Beyond the happy path</h3>
-          <p>axe-core WCAG 2.0 A/AA scan gating on critical violations, <code class="mono">toMatchAriaSnapshot</code> structural
-            assertions, and <code class="mono">APIRequestContext</code> canaries at the HTTP level.</p>
+        <div class="bento-card span-7 glow">
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🔦</span> “Green via fallback” is never invisible</h4>
+          <p>Self-healing has an obvious failure mode: it hides rot. A suite that silently limps along on fallbacks looks
+            identical to a healthy one. So after <strong>every</strong> run the custom <code class="mono">HealingReporter</code>
+            prints the active preferred overrides — not just this run's events — and
+            <code class="mono">npm run healing:show</code> dumps the store on demand. A heal keeps the build green
+            <em>and</em> files a visible debt: a primary selector is broken and someone should look.
+            CI never writes the store back — heals arrive as an uploaded artifact and a run summary, so adopting
+            a healed selector stays a deliberate human commit.</p>
+          <div class="kv mono">
+            <div><span class="dim">heal happens</span><span class="ok">build stays green</span></div>
+            <div><span class="dim">every run after</span><span class="ok">override reported until fixed</span></div>
+            <div><span class="dim">store in CI</span><span class="ok">artifact only, never auto-committed</span></div>
+          </div>
+        </div>
+
+        <div class="bento-card span-5 glow">
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">♿</span> Beyond the happy path</h4>
+          <p>axe-core WCAG 2.0 A/AA scan gating on <strong>critical and serious</strong> violations,
+            <code class="mono">toMatchAriaSnapshot</code> structural assertions, and
+            <code class="mono">APIRequestContext</code> canaries at the HTTP level — so a green UI run
+            can't hide a broken contract underneath it.</p>
         </div>
 
         <div class="bento-card span-4 glow">
-          <h3 class="bento-title"><span class="bento-ico">⚙️</span> CI built to scale</h3>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">⚙️</span> CI built to scale</h4>
           <p>Static checks fail fast → sharded test matrix → blob reports merged into one HTML report.
-            PR annotations, nightly cron, manual dispatch with tag filter. Scaling = extending the shard matrix.</p>
+            PR annotations, a nightly full-regression cron, manual dispatch with tag filter. Scaling = extending the shard matrix.</p>
         </div>
 
         <div class="bento-card span-4 glow">
-          <h3 class="bento-title"><span class="bento-ico">🏷</span> 14 tests, 9 suites, 3 browsers</h3>
-          <p>Tag-driven: <code class="mono">@smoke @stays @flights @cars @attractions @a11y @api @healer</code> compose
-            with <code class="mono">--grep</code> regexes. Verified green against the live site, Chromium / Firefox / WebKit.</p>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🏷</span> 15 tests · 9 suites · 3 browsers</h4>
+          <p>Tag-driven: <code class="mono">@smoke @regression @stays @flights @cars @attractions @a11y @api @healer</code>
+            compose with <code class="mono">--grep</code> regexes. Verified green against the live site on
+            Chromium, Firefox and WebKit.</p>
+        </div>
+
+        <div class="bento-card span-4 glow">
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">📸</span> Documentation it generates itself</h4>
+          <p>The README's screenshots aren't hand-captured and going stale — <code class="mono">npm run docs:screenshots</code>
+            drives a separate Playwright config to re-shoot them. <em>The docs are an artifact of the suite.</em></p>
         </div>
       </div>
 
       <p class="project-foot mono reveal">
-        <span class="dim">page objects never assert · specs never touch selectors · selectors heal themselves</span>
+        <span class="dim">page objects never assert · specs never touch selectors · selectors heal themselves — and say so</span>
       </p>
     </article>
 
@@ -282,30 +385,31 @@
       <header class="project-head">
         <div>
           <p class="project-tag mono">03 / visual regression</p>
-          <h2 class="project-title">Visual Comparison</h2>
+          <h3 class="project-title">Visual Comparison</h3>
           <p class="project-lede">
             <strong>Pixel-perfect UI regression testing.</strong> Catches the layout and styling breakage functional
             tests walk straight past — and <em>proves it</em> by diffing a clean build against an intentionally broken
-            one. A data-driven registry keeps the jump from ~30 snapshots to <em>1000+</em> linear: one array row
+            one. A data-driven registry keeps the jump from 6 scenarios to <em>1000+</em> linear: one array row
             becomes a test across every project.
           </p>
         </div>
         <div class="project-cta">
-          <a class="btn btn-primary" href="https://github.com/IvanPetrovic991/visual-comparison" target="_blank" rel="noopener">View repo →</a>
+          <a class="btn btn-primary" href="https://github.com/IvanPetrovic991/visual-comparison" target="_blank" rel="noopener">View repo <span class="btn-ico" aria-hidden="true">↗</span></a>
+          <a class="live-link" href="https://ivanpetrovic.dev/visual-comparison/" target="_blank" rel="noopener"><span class="live-dot" aria-hidden="true"></span>live Allure dashboard ↗</a>
           <div class="chips mono">
-            <span>Playwright 1.61</span><span>TypeScript 6</span><span>Page Object Model</span><span>Docker</span><span>Sharded CI</span><span>3 browsers · 2 devices</span>
+            <span>Playwright 1.63</span><span>TypeScript 7</span><span>Page Object Model</span><span>Docker</span><span>4-way sharded CI</span><span>3 browsers · 2 devices</span>
           </div>
         </div>
       </header>
 
       <div class="bento">
         <div class="bento-card span-7 glow">
-          <h3 class="bento-title"><span class="bento-ico">🔍</span> Proven to catch real bugs</h3>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🔍</span> Proven to catch real bugs</h4>
           <p>A screenshot test is only convincing if it catches something. The same suite runs against two deploys of
-            the Toolshop app — a clean build and an intentionally broken fork — backed by <em>identical data</em>, so any
+            the Toolshop app — a clean build and an intentionally broken one — backed by <em>identical data</em>, so any
             pixel difference is a planted defect the suite must flag. On the with-bugs build the affected pages light up
             red — a shifted layout and typos like <code class="mono">Contakt</code> and <code class="mono">Massage</code>
-            all caught. The trick: there a <em>passing</em> run would be the real bug.</p>
+            all caught. The trick: there, a <em>passing</em> run would be the real bug.</p>
           <div class="verdict mono">
             <div class="v-row v-head"><span>Build</span><span>Role</span><span>Run</span><span></span><span>Verdict</span></div>
             <div class="v-row"><span>clean</span><span>baseline source</span><span>passes</span><span></span><span class="ok">✓ match</span></div>
@@ -314,11 +418,11 @@
         </div>
 
         <div class="bento-card span-5 glow">
-          <h3 class="bento-title"><span class="bento-ico">🧬</span> Data-driven registry — add a row, get a test</h3>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🧬</span> Data-driven registry — add a row, get a test</h4>
           <p>Coverage lives in one array; a single generated spec turns each entry into a test, multiplied across every
             project. <em>Adding a screenshot is one object, not a new file</em> — the design that keeps the jump to
             1000+ snapshots linear.</p>
-<pre class="code mono"><code><span class="c-cm">// pageRegistry.ts — one entry = one test</span>
+<pre class="code mono" tabindex="0" role="region" aria-label="Code sample, scrollable"><code><span class="c-cm">// pageRegistry.ts — one entry = one test</span>
 {
   category: <span class="c-str">'home'</span>,
   name: <span class="c-str">'home-grid'</span>,
@@ -329,50 +433,71 @@
 }</code></pre>
         </div>
 
+        <div class="bento-card span-7 glow">
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🤖</span> The CI proves the suite still bites</h4>
+          <p>A 4-way sharded matrix runs in the pinned Playwright container. Each shard records baselines from the clean
+            build, sanity-checks the clean build against them (no false positives), then runs the with-bugs build and
+            <em>asserts diffs were found</em> — and that <strong>every failure is a visual diff</strong>, not a timeout or
+            a crash wearing a regression's badge. An over-tolerant threshold can never let the suite go silently blind.</p>
+          <div class="kv mono">
+            <div><span class="dim">clean vs baselines</span><span class="ok">must match → no false positives</span></div>
+            <div><span class="dim">with-bugs vs baselines</span><span class="ok">must differ → else CI fails</span></div>
+            <div><span class="dim">failure reason</span><span class="ok">must be a pixel diff → else CI fails</span></div>
+          </div>
+        </div>
+
         <div class="bento-card span-5 glow">
-          <h3 class="bento-title"><span class="bento-ico">🧊</span> Flake frozen from one place</h3>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🧊</span> Flake frozen from one place</h4>
           <p>Every visual assertion inherits one tuned config: animations and caret killed, a shared stylesheet that
             freezes transitions and hides the polling chat widget, and a resolution-independent tolerance that absorbs
             anti-aliasing noise without hiding real change.</p>
-<pre class="code mono"><code>toHaveScreenshot: {
+<pre class="code mono" tabindex="0" role="region" aria-label="Code sample, scrollable"><code>toHaveScreenshot: {
   animations: <span class="c-str">'disabled'</span>,
   caret: <span class="c-str">'hide'</span>,
   scale: <span class="c-str">'css'</span>,
   stylePath: <span class="c-str">'./tests/support/visual-stabilize.css'</span>,
   threshold: <span class="c-num">0.2</span>,
   maxDiffPixelRatio: <span class="c-num">0.01</span>,
+  maxDiffPixels: <span class="c-num">1000</span>,
 }</code></pre>
         </div>
 
         <div class="bento-card span-7 glow">
-          <h3 class="bento-title"><span class="bento-ico">🤖</span> The CI proves the suite still bites</h3>
-          <p>A 4-way sharded matrix runs in the pinned Playwright container. Each shard records baselines from the clean
-            build, sanity-checks the clean build against them (no false positives), then runs the with-bugs build and
-            <em>asserts diffs were found</em> — a meta-check that fails CI if zero regressions are flagged, so an
-            over-tolerant threshold can never let the visual suite go silently blind. Blob reports merge into one HTML
-            report with every side-by-side diff.</p>
-          <div class="kv mono">
-            <div><span class="dim">clean vs baselines</span><span class="ok">must match → no false positives</span></div>
-            <div><span class="dim">with-bugs vs baselines</span><span class="ok">must differ → else CI fails</span></div>
-          </div>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🧭</span> Ten weeks of red, and the right fix</h4>
+          <p>The Toolshop's v5.0 rewrite started sending product search as an HTTP <code class="mono">QUERY</code> with a
+            JSON body, while the with-bugs build still sent <code class="mono">GET ?q=</code>. A wait pinned to one HTTP
+            verb timed out for <strong>ten weeks of CI</strong>. The fix wasn't to wait on the other verb — it was to stop
+            coupling to the transport at all: the suite now waits on the <em>state the app derives</em> from the response,
+            the results container it stamps <code class="mono">search_completed</code> plus the count that only renders once
+            results arrive. <span class="q">“No copy of the API's shape to keep in sync — and an outage now fails loudly instead of baselining an empty grid.”</span></p>
+        </div>
+
+        <div class="bento-card span-5 glow">
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">📊</span> A dashboard you can actually open</h4>
+          <p>Allure runs as a secondary reporter feeding a <strong>hosted dashboard with history and trends</strong>,
+            published to GitHub Pages. Every failed test carries its interactive image diff — Expected / Actual / Diff —
+            and the exact reason it failed. It publishes <em>only</em> when every shard passed both its clean sanity check
+            and its “all failures are visual diffs” assertion, so it never shows a run that broke for the wrong reason.</p>
+          <p><a class="link-arrow" href="https://ivanpetrovic.dev/visual-comparison/" target="_blank" rel="noopener">Open the live dashboard <span aria-hidden="true">→</span></a></p>
         </div>
 
         <div class="bento-card span-4 glow">
-          <h3 class="bento-title"><span class="bento-ico">🖥</span> Cross-browser &amp; responsive</h3>
-          <p>Six flows run across five projects: Chromium, Firefox and WebKit at one 1366×768 desktop viewport, plus
-            Chromium-based <code class="mono">Galaxy Tab S4</code> and <code class="mono">Pixel 7</code>. Selectors target
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🖥</span> Cross-browser &amp; responsive</h4>
+          <p>Six scenarios run across five projects: Chromium, Firefox and WebKit at a 1366×768 desktop viewport, plus
+            <code class="mono">Galaxy Tab S4</code> and <code class="mono">Pixel 7</code>. Selectors target
             <code class="mono">data-test</code> via <code class="mono">getByTestId</code> — immune to CSS/text refactors.</p>
         </div>
 
         <div class="bento-card span-4 glow">
-          <h3 class="bento-title"><span class="bento-ico">🐳</span> Deterministic pixels in Docker</h3>
-          <p>Fonts and anti-aliasing differ across macOS, Windows and Linux, so baselines drift between machines. The
-            pinned <code class="mono">playwright:v1.61.1-noble</code> image renders identically within tolerance on Linux
-            locally and in CI — container baselines match CI exactly. No Percy or Applitools SaaS needed.</p>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🐳</span> Deterministic pixels in Docker</h4>
+          <p>Fonts and anti-aliasing differ across macOS, Windows and Linux, so a baseline recorded on a Mac won't
+            match one recorded in CI. The pinned <code class="mono">playwright:v1.63.0-noble</code> image gives local
+            runs the same browser builds, fonts and OS libraries as CI — and a lockstep check fails the build if the
+            image and the npm dependency ever drift apart.</p>
         </div>
 
         <div class="bento-card span-4 glow">
-          <h3 class="bento-title"><span class="bento-ico">🔒</span> Baselines under control</h3>
+          <h4 class="bento-title"><span class="bento-ico" aria-hidden="true">🔒</span> Baselines under control</h4>
           <p><code class="mono">updateSnapshots: 'none'</code> in CI fails on any drift; <code class="mono">baseline:changed</code>
             rewrites only what genuinely differs for clean diffs. At thousands of PNGs the snapshot tree can move to
             Git LFS to keep clones fast.</p>
@@ -380,24 +505,24 @@
       </div>
 
       <p class="project-foot mono reveal">
-        <span class="dim">record clean → sanity-check → diff with-bugs → assert caught → merge</span> — CI fails if the suite stops catching bugs
+        <span class="dim">record clean → sanity-check → diff with-bugs → assert caught → merge → publish</span> — CI fails if the suite stops catching bugs
       </p>
     </article>
   </section>
 
   <!-- ============ EXPERIENCE ============ -->
-  <section id="experience" class="section">
+  <section id="experience" class="section" aria-labelledby="xp-h">
     <p class="section-kicker mono reveal">// where this was forged</p>
-    <h2 class="section-title reveal">Experience</h2>
+    <h2 id="xp-h" class="section-title reveal">Experience</h2>
 
     <div class="xp-list">
       <article class="xp reveal glow">
         <div class="xp-when mono"><span class="ok">Jun 2024 — now</span></div>
         <div class="xp-body">
-          <h3>Performance Engineer · Senior QA Automation · Team Lead <span class="xp-co grad-text">@ Fuel Me</span></h3>
+          <h3>Performance Engineer · Senior QA Automation Engineer · Team Lead <span class="xp-co grad-text">@ Fuel Me</span></h3>
           <p class="xp-blurb">AI-powered fuel procurement platform, Fortune 500 clients, Series A.</p>
           <ul class="ticks">
-            <li>Own platform performance end to end: load, stress, spike, endurance & scalability with JMeter against APIs and full user journeys — bottlenecks and memory leaks hunted at production scale, SLAs and baselines set, perf checks wired into CI/CD</li>
+            <li>Own platform performance end to end: load, stress, spike, endurance &amp; scalability with JMeter against APIs and full user journeys — bottlenecks and memory leaks hunted at production scale, SLAs and baselines set, perf checks wired into CI/CD</li>
             <li>Built the entire automation framework from scratch (Playwright + Node.js) — 100% of regression automated</li>
             <li>Pioneered AI/LLM workflows for test-case generation, script creation and auto-healing</li>
             <li>Leading a QA team of 3 — strategy, mentoring, code reviews</li>
@@ -413,7 +538,7 @@
           <ul class="ticks">
             <li>Joined a 100% manual team → built the automation framework from scratch (Selenium, Java, TestNG)</li>
             <li>Mentored 8 QA engineers through the move to automation; by departure, 100% of regression was automated</li>
-            <li>Web + mobile (iOS/Android), API testing, SQL validation, CI/CD with Jenkins & GitHub Actions</li>
+            <li>Web + mobile (iOS/Android), API testing, SQL validation, CI/CD with Jenkins &amp; GitHub Actions</li>
           </ul>
         </div>
       </article>
@@ -429,57 +554,57 @@
     </div>
 
     <div class="xp-more reveal">
-      <a href="cv.html" class="btn btn-ghost">See full career history →</a>
+      <a href="cv.html" class="btn btn-ghost">See full career history <span class="btn-ico" aria-hidden="true">→</span></a>
     </div>
 
-    <p class="edu mono reveal"><span class="grad-text">$</span> cat education.txt <span class="dim">→</span> BSc Applied Computer Science · University of Montenegro · 2010–2013</p>
+    <p class="edu mono reveal"><span class="ok">$</span> cat education.txt <span class="dim">→</span> BSc Applied Computer Science · University of Montenegro · 2010–2013</p>
   </section>
 
   <!-- ============ STACK ============ -->
-  <section id="stack" class="section">
+  <section id="stack" class="section" aria-labelledby="stack-h">
     <p class="section-kicker mono reveal">// tools are interchangeable, judgment isn't</p>
-    <h2 class="section-title reveal">Stack</h2>
+    <h2 id="stack-h" class="section-title reveal">Stack</h2>
     <div class="stack-grid">
       <div class="stack-card reveal glow">
-        <h3 class="mono">⚡ performance/</h3>
-        <p>JMeter <span class="dim">(daily driver)</span> · Locust · k6 · Gatling — load, stress, spike, soak; bottleneck analysis, memory-leak detection, SLAs & baselines, CI perf gates</p>
+        <h3 class="mono"><span aria-hidden="true">⚡</span> performance/</h3>
+        <p>JMeter <span class="dim">(daily driver)</span> · Locust · k6 · Gatling — load, stress, spike, soak; bottleneck analysis, memory-leak detection, SLAs &amp; baselines, CI perf gates</p>
       </div>
       <div class="stack-card reveal glow">
-        <h3 class="mono">🤖 automation/</h3>
+        <h3 class="mono"><span aria-hidden="true">🤖</span> automation/</h3>
         <p>Playwright · Selenium · TestNG — framework architecture, self-healing strategies, API testing, mobile (iOS/Android), cross-browser</p>
       </div>
       <div class="stack-card reveal glow">
-        <h3 class="mono">📈 observability/</h3>
+        <h3 class="mono"><span aria-hidden="true">📈</span> observability/</h3>
         <p>Grafana · Prometheus · OpenTelemetry · Sentry — dashboards as code, root-cause analysis of latency spikes and throughput degradation</p>
       </div>
       <div class="stack-card reveal glow">
-        <h3 class="mono">💻 languages/</h3>
+        <h3 class="mono"><span aria-hidden="true">💻</span> languages/</h3>
         <p>TypeScript · JavaScript · Node.js · Java · Python · SQL · PHP</p>
       </div>
       <div class="stack-card reveal glow">
-        <h3 class="mono">🧠 ai-devops/</h3>
+        <h3 class="mono"><span aria-hidden="true">🧠</span> ai-devops/</h3>
         <p>Custom AI/LLM test workflows · intelligent test generation · GitHub Actions · Jenkins · Docker · Linux</p>
       </div>
       <div class="stack-card reveal glow">
-        <h3 class="mono">👥 leadership/</h3>
+        <h3 class="mono"><span aria-hidden="true">👥</span> leadership/</h3>
         <p>Team lead ×2 · 11+ engineers mentored · code review culture · Agile/Scrum · JIRA · Confluence</p>
       </div>
     </div>
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section id="contact" class="section section-contact">
+  <section id="contact" class="section section-contact" aria-labelledby="contact-h">
     <p class="section-kicker mono reveal">// ping me</p>
-    <h2 class="contact-title reveal">Let's make something<br><em class="grad-text">fast and unbreakable.</em></h2>
+    <h2 id="contact-h" class="contact-title reveal">Let's make something<br><em class="grad-text">fast and unbreakable.</em></h2>
     <div class="contact-actions reveal d2">
-      <a href="mailto:ivannkpetrovic@gmail.com" class="btn btn-primary btn-lg">ivannkpetrovic@gmail.com</a>
+      <a href="mailto:ivannkpetrovic@gmail.com" class="btn btn-primary btn-lg">ivannkpetrovic@gmail.com <span class="btn-ico" aria-hidden="true">↗</span></a>
     </div>
     <div class="contact-links mono reveal d3">
       <a href="https://www.linkedin.com/in/ivan-petrovic-me/" target="_blank" rel="noopener">linkedin/ivan-petrovic-me</a>
-      <span class="dim">·</span>
+      <span aria-hidden="true">·</span>
       <a href="https://github.com/IvanPetrovic991" target="_blank" rel="noopener">github/IvanPetrovic991</a>
-      <span class="dim">·</span>
-      <span class="dim">+382 68 366 233</span>
+      <span aria-hidden="true">·</span>
+      <a href="tel:+38268366233">+382 68 366 233</a>
     </div>
   </section>
   </main>
